@@ -1,7 +1,7 @@
 About honto
 ===========
 
-Home: https://github.com/fabio-cumbo/honto
+Home: https://github.com/cumbof/honto
 
 Package license: MIT
 
