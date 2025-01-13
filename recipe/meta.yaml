@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: bea61abd9003215dbfdbeb364d18920a62bb2861843c328d61b5edc6d2798e6d
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - honto=honto.honto:main
@@ -18,11 +18,11 @@ build:
 
 requirements:
   host:
-    - python >=3
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python >=3
+    - python >={{ python_min }}
     - tqdm >=4.38.0
     - pandas >=1.0.1
     - networkx >=2.8
@@ -37,6 +37,7 @@ test:
     - honto --version
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/fabio-cumbo/honto
